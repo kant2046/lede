@@ -14,8 +14,8 @@ on:
     branches: 
       - CI-demo
   #     ↑↑↑ 改成你的分支名, 一般是master
-  # schedule:
-  #   - cron: 0 20 * * *
+  schedule:
+    - cron: 0 20 * * *
   # release:
   #   types: [published]
 
@@ -103,9 +103,9 @@ jobs:
 
           # 编译x64固件:
           cat >> .config <<EOF
-          CONFIG_TARGET_x86=y
-          CONFIG_TARGET_x86_64=y
-          CONFIG_TARGET_x86_64_Generic=y
+          CONFIG_TARGET_mediatek=y
+          CONFIG_TARGET_mt7621=y
+          CONFIG_TARGET_mir3g=y
           EOF
 
           # 固件压缩:
